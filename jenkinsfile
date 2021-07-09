@@ -1,0 +1,16 @@
+pipeline {
+    agent any 
+    stages {
+        stage(checkout) { 
+            steps {
+            sh 'git clone https://github.com/puranikamath/java-mvn-hello-world-web-app    
+            }
+        }
+        stage(mvnTest) { 
+            steps {
+                sh.mvn install
+            
+            }
+        }
+    }
+}
